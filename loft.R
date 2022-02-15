@@ -406,11 +406,142 @@ names(b) <- c('url_cond', 'end_condm','ano_torre', 'torres','elevador ','tem_ac'
 
 b %>%  write.csv(.,file = "loft220202_condominios.csv", row.names = FALSE)
 
+b <- read.csv("obsoleto/loft220202_condominios.csv")
+
+# AJUSTANDO NAs
+b[11,3] <- 2021
+b[59,3] <- 2016
+b[123,3] <- 2021
+b[143,3] <- 2021
+b[234,3] <- 2021
+b[360,3] <- 2019
+b[372,3] <- 2021
+b[374,3] <- 2017
+b[517,3] <- 2020
+b[734,3] <- 2019
+b[738,3] <- 2018
+b[742,3] <- 2020
+b[758,3] <- 2019
+b[933,3] <- 2021
+b[1048,3] <- 2016
+b[1051,3] <- 2020
+b[1065,3] <- 2018
+b[1081,3] <- 2022
+b[1157,3] <- 2018
+b[1158,3] <- 2020
+b[1166,3] <- 2018
+b[1217,3] <- 2013
+b[1435,3] <- 2021
+b[1460,3] <- 2020
+b[1498,3] <- 2018
+b[1647,3] <- 2017
+b[1736,3] <- 2019
+b[1749,3] <- 2017
+b[1752,3] <- 2020
+b[1762,3] <- 2020
+b[1901,3] <- 2019
+b[1904,3] <- 2019
+b[2310,3] <- 2017
+b[2572,3] <- 2020
+b[2891,3] <- 2016
+b[2992,3] <- 2019
+b[3083,3] <- 2020
+b[3155,3] <- 2020
+b[3167,3] <- 2019
+b[3188,3] <- 2018
+b[3319,3] <- 2019
+b[3386,3] <- 2020
+b[3459,3] <- 2021
+b[3945,3] <- 2020
+b[3967,3] <- 2018
+b[4311,3] <- 2019
+b[4446,3] <- 2018
+b[4471,3] <- 2020
+b[4537,3] <- 2020
+b[4637,3] <- 2019
+b[4639,3] <- 2019
+b[4656,3] <- 2017
+b[4688,3] <- 2020
+b[4690,3] <- 2021
+b[4694,3] <- 2020
+b[4704,3] <- 2018
+b[4730,3] <- 2018
+b[4731,3] <- 2019
+b[4732,3] <- 2020
+b[4762,3] <- 2018
+b[4844,3] <- 2020
+b[5034,3] <- 2015
+b[5068,3] <- 2017
+b[5213,3] <- 2019
+b[5278,3] <- 2020
+b[5283,3] <- 2019
+b[5303,3] <- 2018
+b[5327,3] <- 2019
+b[5344,3] <- 2020
+b[5365,3] <- 2018
+b[5368,3] <- 2020
+b[5497,3] <- 2020
+b[5586,3] <- 2019
+b[5600,3] <- 2020
+b[5701,3] <- 2020
+b[5920,3] <- 2015
+b[5957,3] <- 2019
+b[5971,3] <- 2018
+b[6084,3] <- 2018
+b[6111,3] <- 2021
+b[6162,3] <- 2019
+b[6188,3] <- 2018
+b[6195,3] <- 2018
+b[6197,3] <- 2019
+b[6219,3] <- 2019
+b[6263,3] <- 2022
+b[6361,3] <- 2021
+b[6370,3] <- 2020
+b[6430,3] <- 2019
+b[6650,3] <- 2020
+b[6668,3] <- 2019
+b[6824,3] <- 2021
+b[6850,3] <- 2018
+
+b[1461,3] <- b[1461,3] %>% dplyr::na_if(1)
+b[1544,3] <- 2017
+b[1903,3] <- 2019
+b[1931,3] <- 2019
+b[3182,3] <- b[3182,3] %>% dplyr::na_if(1)
+b[4808,3] <- b[4808,3] %>% dplyr::na_if(1)
+b[6607,3] <- 2021
+b[895,3] <- 2020
+b[1072,3] <- b[1072,3] %>% dplyr::na_if(2)
+b[1514,3] <- b[1514,3] %>% dplyr::na_if(2)
+b[3215,3] <- 2019
+b[4417,3] <- 2020
+b[4795,3] <- b[4795,3] %>% dplyr::na_if(2)
+b[4847,3] <- b[4847,3] %>% dplyr::na_if(2)
+b[5375,3] <- b[5375,3] %>% dplyr::na_if(2)
+b[5630,3] <- 2016
+b[893,3] <- b[893,3] %>% dplyr::na_if(3)
+b[1443,3] <- 2021
+b[1557,3] <- 2011
+b[5232,3] <- 2016
+b[6142,3] <- 2019
+b[6349,3] <- b[6349,3] %>% dplyr::na_if(3)
+b[1412,3] <- b[1412,3] %>% dplyr::na_if(4)
+b[1911,3] <- b[1911,3] %>% dplyr::na_if(4)
+b[2059,3] <- b[2059,3] %>% dplyr::na_if(4)
+b[6284,3] <- 2018
+b[1556,3] <- b[1556,3] %>% dplyr::na_if(12)
+b[1937,3] <- b[1937,3] %>% dplyr::na_if(12)
+b[1446,3] <- b[1937,3] %>% dplyr::na_if(57)
+
+b %>%  write.csv(.,file = "loft220211_condominios.csv", row.names = FALSE)
+
+dplyr::na_if(1)
+
 #####
 # 2.1 AMPLIANDO AREA COMUM
 #####
 
-b <- read.csv("loft220202_condominios.csv")
+b <- read.csv("loft220211_condominios.csv")
 
 #Verificando a quantidade de tipos de area comum disponível
 #acomum <- b %>% distinct(tem_ac, .keep_all= FALSE) %>% iconv(from = 'UTF-8', to = 'ASCII//TRANSLIT') %>% tolower()
@@ -452,7 +583,7 @@ b <- b[-c(6,7)]
 
 b <- b %>% cbind(area_comum)
 
-b %>%  write.csv(.,file = "loft_ac_220203.csv", row.names = FALSE)
+b %>%  write.csv(.,file = "loft_ac_220211.csv", row.names = FALSE)
 
 #####
 # 3.0 WEBSCRAPPING - COORDENADAS GEOGRAFICAS
@@ -677,12 +808,12 @@ pnts_sub_pref %>%  write.csv(.,file = "loft_pref_220125.csv", row.names = FALSE)
 # recuperando os DF desenvolvidos
 df_ape <- read.csv("loft220109.csv")
 a <- read.csv("loft220114_comp.csv")
-b <- read.csv("loft_ac_220203.csv")
+b <- read.csv("loft_ac_220211.csv")
 c <- read.csv("loft_pref_220125.csv")
 
 #juntando a listagem geral com o detalhe dos apartamentos -> DF final
 df_final <- left_join(df_ape, a, by=c("endereco"="url.ape"))
-df_final <- df_final[-c(1)]
+df_final <- df_final[-c(1)] # retirando coluna - 'endereco
 
 # juntando DF final junto com o detalhe de cada condomínio -> DF FINAL
 df_final <- left_join(df_final, b, by=c("cond_url"="url_cond"))
@@ -705,7 +836,7 @@ for (i in 1:dim(df_final)[1]){
     }
 }
 # eliminando: end_comp / end_condm / tem_numero 
-df_final <- df_final[-c(3, 12, 31)]
+df_final <- df_final[-c(3, 12, 29)]
 names(df_final)
 
 # inserindo 0 onde deu NA
@@ -727,13 +858,19 @@ names(df_final)
 loft_n_columns <- c("ape_preco","ape_pav","ape_area","ape_precom2","ape_dorm","ape_suite","ape_banheiro","ape_vaga","cond_nome",
 "cond_ano","cond_n_torres","cond_elevador","salao.de.festas","espaco.gourmet","academia","salao.de.jogos",
 "brinquedoteca","playground","churrasqueira","quadra","area.verde","piscina","espaco.zen","lavanderia","coworking",
-"espaco.mulher","salao.de.festas.infantil","cond_end","zeu","sp_nome","latitude","longitude","gi_df")
+"cond_end","zeu","sp_nome","latitude","longitude","gi_df")
 
 colnames(df_final) <- loft_n_columns
 
 df_final <- df_final %>% dplyr::select("ape_preco","ape_precom2","ape_area","ape_dorm","ape_suite","ape_banheiro","ape_vaga","cond_nome","cond_end",
 "cond_ano","cond_n_torres","cond_elevador","salao.de.festas","espaco.gourmet","academia","salao.de.jogos",
 "brinquedoteca","playground","churrasqueira","quadra","area.verde","piscina","espaco.zen","lavanderia",
-"coworking","espaco.mulher","salao.de.festas.infantil","zeu","sp_nome","latitude","longitude","gi_df" )
+"coworking","zeu","sp_nome","latitude","longitude","gi_df" )
 
-df_final %>%  write.csv(.,file = "data/loft_final.csv", row.names = FALSE)
+df_final %>%  write.csv(.,file = "data/loft_final_R01.csv", row.names = FALSE)
+
+df_final <- read.csv("data/loft_final_R01.csv")
+
+xx <- df_final %>% filter(cond_ano < 1900)
+
+colSums(is.na(df_final))
